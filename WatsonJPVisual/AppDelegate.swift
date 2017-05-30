@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  CarthageExample
+//  WatsonJPVisual
 //
 //  Created by John Papajani on 5/28/17.
 //  Copyright © 2017 John Papajani. All rights reserved.
