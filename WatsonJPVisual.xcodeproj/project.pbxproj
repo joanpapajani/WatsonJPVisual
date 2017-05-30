@@ -82,7 +82,7 @@
 				584126201EDB9E2900823280 /* Alamofire.framework.dSYM */,
 				584126021EDB96DB00823280 /* RestKit.framework */,
 				584126031EDB96DB00823280 /* VisualRecognitionV3.framework */,
-				584125EF1EDB961C00823280 /* CarthageExample */,
+				584125EF1EDB961C00823280 /* WatsonJPVisual */,
 				584125EE1EDB961C00823280 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,7 +95,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		584125EF1EDB961C00823280 /* CarthageExample */ = {
+		584125EF1EDB961C00823280 /* WatsonJPVisual */ = {
 			isa = PBXGroup;
 			children = (
 				584125F01EDB961D00823280 /* AppDelegate.swift */,
@@ -105,7 +105,6 @@
 				584125F91EDB961D00823280 /* LaunchScreen.storyboard */,
 				584125FC1EDB961D00823280 /* Info.plist */,
 			);
-			name = CarthageExample;
 			path = WatsonJPVisual;
 			sourceTree = "<group>";
 		};
