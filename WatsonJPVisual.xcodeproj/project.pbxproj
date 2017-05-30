@@ -20,6 +20,7 @@
 		584126221EDB9E2900823280 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5841261F1EDB9E2900823280 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		584126281EDBA55D00823280 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584126261EDBA55D00823280 /* AlamofireImage.framework */; };
 		584126291EDBA55D00823280 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 584126261EDBA55D00823280 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		588F99F01EDE2D61004C4AEA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 584125FC1EDB961D00823280 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,7 +41,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		584125ED1EDB961C00823280 /* WatsonTestJP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatsonTestJP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		584125ED1EDB961C00823280 /* WatsonJPVisual.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatsonJPVisual.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		584125F01EDB961D00823280 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		584125F21EDB961D00823280 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		584125F51EDB961D00823280 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,7 +90,7 @@
 		584125EE1EDB961C00823280 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				584125ED1EDB961C00823280 /* WatsonTestJP.app */,
+				584125ED1EDB961C00823280 /* WatsonJPVisual.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,15 +105,16 @@
 				584125F91EDB961D00823280 /* LaunchScreen.storyboard */,
 				584125FC1EDB961D00823280 /* Info.plist */,
 			);
-			path = CarthageExample;
+			name = CarthageExample;
+			path = WatsonJPVisual;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		584125EC1EDB961C00823280 /* WatsonTestJP */ = {
+		584125EC1EDB961C00823280 /* WatsonJPVisual */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 584125FF1EDB961D00823280 /* Build configuration list for PBXNativeTarget "WatsonTestJP" */;
+			buildConfigurationList = 584125FF1EDB961D00823280 /* Build configuration list for PBXNativeTarget "WatsonJPVisual" */;
 			buildPhases = (
 				584125E91EDB961C00823280 /* Sources */,
 				584125EA1EDB961C00823280 /* Frameworks */,
@@ -123,9 +125,9 @@
 			);
 			dependencies = (
 			);
-			name = WatsonTestJP;
+			name = WatsonJPVisual;
 			productName = CarthageExample;
-			productReference = 584125ED1EDB961C00823280 /* WatsonTestJP.app */;
+			productReference = 584125ED1EDB961C00823280 /* WatsonJPVisual.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -145,7 +147,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 584125E81EDB961C00823280 /* Build configuration list for PBXProject "WatsonTestJP" */;
+			buildConfigurationList = 584125E81EDB961C00823280 /* Build configuration list for PBXProject "WatsonJPVisual" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -158,7 +160,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				584125EC1EDB961C00823280 /* WatsonTestJP */,
+				584125EC1EDB961C00823280 /* WatsonJPVisual */,
 			);
 		};
 /* End PBXProject section */
@@ -168,6 +170,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				588F99F01EDE2D61004C4AEA /* Info.plist in Resources */,
 				584125FB1EDB961D00823280 /* LaunchScreen.storyboard in Resources */,
 				584125F81EDB961D00823280 /* Assets.xcassets in Resources */,
 				584125F61EDB961D00823280 /* Main.storyboard in Resources */,
@@ -308,7 +311,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = CarthageExample/Info.plist;
+				INFOPLIST_FILE = WatsonJPVisual/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.CarthageExample;
@@ -326,7 +329,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = CarthageExample/Info.plist;
+				INFOPLIST_FILE = WatsonJPVisual/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.CarthageExample;
@@ -338,7 +341,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		584125E81EDB961C00823280 /* Build configuration list for PBXProject "WatsonTestJP" */ = {
+		584125E81EDB961C00823280 /* Build configuration list for PBXProject "WatsonJPVisual" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				584125FD1EDB961D00823280 /* Debug */,
@@ -347,7 +350,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		584125FF1EDB961D00823280 /* Build configuration list for PBXNativeTarget "WatsonTestJP" */ = {
+		584125FF1EDB961D00823280 /* Build configuration list for PBXNativeTarget "WatsonJPVisual" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				584126001EDB961D00823280 /* Debug */,
