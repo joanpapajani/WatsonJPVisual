@@ -14,13 +14,15 @@
 		584125FB1EDB961D00823280 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 584125F91EDB961D00823280 /* LaunchScreen.storyboard */; };
 		584126041EDB96DB00823280 /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584126021EDB96DB00823280 /* RestKit.framework */; };
 		584126051EDB96DB00823280 /* RestKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 584126021EDB96DB00823280 /* RestKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		584126061EDB96DB00823280 /* VisualRecognitionV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584126031EDB96DB00823280 /* VisualRecognitionV3.framework */; };
-		584126071EDB96DB00823280 /* VisualRecognitionV3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 584126031EDB96DB00823280 /* VisualRecognitionV3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		584126211EDB9E2900823280 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5841261F1EDB9E2900823280 /* Alamofire.framework */; };
-		584126221EDB9E2900823280 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5841261F1EDB9E2900823280 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		584126281EDBA55D00823280 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584126261EDBA55D00823280 /* AlamofireImage.framework */; };
-		584126291EDBA55D00823280 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 584126261EDBA55D00823280 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		588F99F01EDE2D61004C4AEA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 584125FC1EDB961D00823280 /* Info.plist */; };
+		58D5A7F51EE89AAC00C5BE7D /* VisualRecognitionV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D5A7F41EE89AAC00C5BE7D /* VisualRecognitionV3.framework */; };
+		58D5A7F61EE89AAC00C5BE7D /* VisualRecognitionV3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 58D5A7F41EE89AAC00C5BE7D /* VisualRecognitionV3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		58D5A7F81EE89B6000C5BE7D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5841261F1EDB9E2900823280 /* Alamofire.framework */; };
+		58D5A7F91EE89B6000C5BE7D /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5841261F1EDB9E2900823280 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		58D5A7FD1EE98CB800C5BE7D /* AAEAAQAAAAAAAAXLAAAAJDc0Y2EyZjc5LTY1MTgtNGVkNC05YTU5LWRiODZhZTYzZjQyOQ.png in Resources */ = {isa = PBXBuildFile; fileRef = 58D5A7FC1EE98CB800C5BE7D /* AAEAAQAAAAAAAAXLAAAAJDc0Y2EyZjc5LTY1MTgtNGVkNC05YTU5LWRiODZhZTYzZjQyOQ.png */; };
+		58D5A7FF1EE9915800C5BE7D /* 0902affe-a84d-458d-88c8-a8117b10fd55.png in Resources */ = {isa = PBXBuildFile; fileRef = 58D5A7FE1EE9915800C5BE7D /* 0902affe-a84d-458d-88c8-a8117b10fd55.png */; };
+		58D5A8031EE9944700C5BE7D /* wea-qa.png in Resources */ = {isa = PBXBuildFile; fileRef = 58D5A8021EE9944700C5BE7D /* wea-qa.png */; };
+		58D5A8051EE9953D00C5BE7D /* 658544-200 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 58D5A8041EE9953D00C5BE7D /* 658544-200 copy.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,9 +33,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				584126051EDB96DB00823280 /* RestKit.framework in Embed Frameworks */,
-				584126221EDB9E2900823280 /* Alamofire.framework in Embed Frameworks */,
-				584126071EDB96DB00823280 /* VisualRecognitionV3.framework in Embed Frameworks */,
-				584126291EDBA55D00823280 /* AlamofireImage.framework in Embed Frameworks */,
+				58D5A7F91EE89B6000C5BE7D /* Alamofire.framework in Embed Frameworks */,
+				58D5A7F61EE89AAC00C5BE7D /* VisualRecognitionV3.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,6 +56,13 @@
 		584126231EDBA4D000823280 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = ../getimage/Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		584126261EDBA55D00823280 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		584126271EDBA55D00823280 /* AlamofireImage.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = AlamofireImage.framework.dSYM; path = Carthage/Build/iOS/AlamofireImage.framework.dSYM; sourceTree = "<group>"; };
+		58D5A7F31EE895BC00C5BE7D /* VisualRecognitionV3.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = VisualRecognitionV3.framework.dSYM; path = Carthage/Build/iOS/VisualRecognitionV3.framework.dSYM; sourceTree = "<group>"; };
+		58D5A7F41EE89AAC00C5BE7D /* VisualRecognitionV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisualRecognitionV3.framework; path = Carthage/Build/iOS/VisualRecognitionV3.framework; sourceTree = "<group>"; };
+		58D5A7F71EE89ABA00C5BE7D /* Alamofire.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Alamofire.framework.dSYM; path = Carthage/Build/iOS/Alamofire.framework.dSYM; sourceTree = "<group>"; };
+		58D5A7FC1EE98CB800C5BE7D /* AAEAAQAAAAAAAAXLAAAAJDc0Y2EyZjc5LTY1MTgtNGVkNC05YTU5LWRiODZhZTYzZjQyOQ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AAEAAQAAAAAAAAXLAAAAJDc0Y2EyZjc5LTY1MTgtNGVkNC05YTU5LWRiODZhZTYzZjQyOQ.png; path = ../../../Downloads/AAEAAQAAAAAAAAXLAAAAJDc0Y2EyZjc5LTY1MTgtNGVkNC05YTU5LWRiODZhZTYzZjQyOQ.png; sourceTree = "<group>"; };
+		58D5A7FE1EE9915800C5BE7D /* 0902affe-a84d-458d-88c8-a8117b10fd55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "0902affe-a84d-458d-88c8-a8117b10fd55.png"; path = "../../../Downloads/0902affe-a84d-458d-88c8-a8117b10fd55.png"; sourceTree = "<group>"; };
+		58D5A8021EE9944700C5BE7D /* wea-qa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wea-qa.png"; path = "../../../Downloads/wea-qa.png"; sourceTree = "<group>"; };
+		58D5A8041EE9953D00C5BE7D /* 658544-200 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "658544-200 copy.png"; path = "../../../Downloads/658544-200 copy.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +71,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				584126041EDB96DB00823280 /* RestKit.framework in Frameworks */,
-				584126211EDB9E2900823280 /* Alamofire.framework in Frameworks */,
-				584126061EDB96DB00823280 /* VisualRecognitionV3.framework in Frameworks */,
-				584126281EDBA55D00823280 /* AlamofireImage.framework in Frameworks */,
+				58D5A7F81EE89B6000C5BE7D /* Alamofire.framework in Frameworks */,
+				58D5A7F51EE89AAC00C5BE7D /* VisualRecognitionV3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +82,9 @@
 		584125E41EDB961C00823280 = {
 			isa = PBXGroup;
 			children = (
+				58D5A7F71EE89ABA00C5BE7D /* Alamofire.framework.dSYM */,
+				58D5A7F41EE89AAC00C5BE7D /* VisualRecognitionV3.framework */,
+				58D5A7F31EE895BC00C5BE7D /* VisualRecognitionV3.framework.dSYM */,
 				584126261EDBA55D00823280 /* AlamofireImage.framework */,
 				584126271EDBA55D00823280 /* AlamofireImage.framework.dSYM */,
 				584126231EDBA4D000823280 /* AlamofireImage.framework */,
@@ -103,7 +113,11 @@
 				584125F41EDB961D00823280 /* Main.storyboard */,
 				584125F71EDB961D00823280 /* Assets.xcassets */,
 				584125F91EDB961D00823280 /* LaunchScreen.storyboard */,
+				58D5A8021EE9944700C5BE7D /* wea-qa.png */,
+				58D5A8041EE9953D00C5BE7D /* 658544-200 copy.png */,
+				58D5A7FE1EE9915800C5BE7D /* 0902affe-a84d-458d-88c8-a8117b10fd55.png */,
 				584125FC1EDB961D00823280 /* Info.plist */,
+				58D5A7FC1EE98CB800C5BE7D /* AAEAAQAAAAAAAAXLAAAAJDc0Y2EyZjc5LTY1MTgtNGVkNC05YTU5LWRiODZhZTYzZjQyOQ.png */,
 			);
 			path = WatsonJPVisual;
 			sourceTree = "<group>";
@@ -142,6 +156,7 @@
 					584125EC1EDB961C00823280 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = QZF28S7TXZ;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -169,8 +184,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58D5A8051EE9953D00C5BE7D /* 658544-200 copy.png in Resources */,
+				58D5A8031EE9944700C5BE7D /* wea-qa.png in Resources */,
 				588F99F01EDE2D61004C4AEA /* Info.plist in Resources */,
 				584125FB1EDB961D00823280 /* LaunchScreen.storyboard in Resources */,
+				58D5A7FF1EE9915800C5BE7D /* 0902affe-a84d-458d-88c8-a8117b10fd55.png in Resources */,
+				58D5A7FD1EE98CB800C5BE7D /* AAEAAQAAAAAAAAXLAAAAJDc0Y2EyZjc5LTY1MTgtNGVkNC05YTU5LWRiODZhZTYzZjQyOQ.png in Resources */,
 				584125F81EDB961D00823280 /* Assets.xcassets in Resources */,
 				584125F61EDB961D00823280 /* Main.storyboard in Resources */,
 			);
@@ -311,7 +330,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = WatsonJPVisual/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.CarthageExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -329,7 +348,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = WatsonJPVisual/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.CarthageExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";

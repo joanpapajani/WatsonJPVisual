@@ -8,7 +8,7 @@
 
 import UIKit
 import VisualRecognitionV3
-import AlamofireImage
+//import AlamofireImage
 import Alamofire
 import MobileCoreServices
 import CoreData
@@ -72,7 +72,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                     for (key, value) in parameters {
                         multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
                     }
-                }, to:"https://2eec40d5.ngrok.io/getimage.php")
+                }, to:"https://56c7de6c.ngrok.io/getimage.php")
                 { (result) in
                     switch result {
                     case .success(let upload, _, _):
@@ -115,7 +115,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         
         
-        let url = URL(string: "https://2eec40d5.ngrok.io/image.jpeg")
+        let url = URL(string: "https://56c7de6c.ngrok.io/image.jpeg")
         
        
         
