@@ -1,0 +1,2 @@
+github "watson-developer-cloud/swift-sdk"
+github "Alamofire/Alamofire" ~> 4.4

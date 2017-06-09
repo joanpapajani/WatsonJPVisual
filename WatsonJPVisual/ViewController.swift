@@ -8,7 +8,6 @@
 
 import UIKit
 import VisualRecognitionV3
-//import AlamofireImage
 import Alamofire
 import MobileCoreServices
 import CoreData
@@ -26,8 +25,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
     }
 
-    @IBAction func getImage(_ sender: Any) {    
-      
+    @IBAction func getImage(_ sender: Any) {
         
         if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)){
             let picker = UIImagePickerController()
@@ -42,6 +40,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             
         }
     }
+
     
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]!) {
             NSLog("Received image from camera")
@@ -61,10 +60,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 imageView.image = imageToSave
                 imageView.reloadInputViews()
                 
-                
+        
                 let parameters = [
-                    "username": "john",
-                    "password": "papa"
+                    "username": "johnpapajani",
+                    "password": "colpal"
                 ]
                 
                 Alamofire.upload(multipartFormData: { (multipartFormData) in
@@ -104,8 +103,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 picker.dismiss(animated: true, completion: nil)
             }
         }
-    
-
     
     
     @IBAction func sendPic(_ sender: Any) {
@@ -164,6 +161,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
 }
