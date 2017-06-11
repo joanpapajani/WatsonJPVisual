@@ -112,7 +112,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         
         var owners: [String] = ["bf4a56b0b163ef8cae452ae70c6552a1ced4c645", "IBM"]
-        var classifierID: [String] = ["Colgate_1194136755", ""]
+        var classifierID: [String] = ["Colgate_1563253915", ""]
         var language = "en"
         
         
@@ -146,7 +146,112 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         
         
-        visualRecognition.classify(image: (url?.absoluteString)!, owners: owners, classifierIDs: classifierID, threshold: 0.0, language: language, failure: failure){
+        visualRecognition.classify(image: (url?.absoluteString)!, owners: owners, classifierIDs: classifierID, threshold: 0.2, language: language, failure: failure){
+            
+            classifiedImages in
+            
+            if let classifiedImage = classifiedImages.images.first {
+                
+                print(classifiedImage.classifiers)
+                
+                /*
+                
+                if (Double((classifiedImage.classifiers.first?.classes.first?.score)!)>Double((classifiedImage.classifiers.first?.classes.last?.score)!)){
+                    
+                    if let classification = classifiedImage.classifiers.first?.classes.first?.classification{
+                        DispatchQueue.main.async {
+                            self.navigationItem.title = classification
+                        }
+                        
+                    }
+                    
+                    
+                    
+                }
+                
+                else if (Double((classifiedImage.classifiers.first?.classes.last?.score)!)>Double((classifiedImage.classifiers.first?.classes.first?.score)!)){
+                    
+                    if let classification = classifiedImage.classifiers.first?.classes.last?.classification{
+                        DispatchQueue.main.async {
+                            self.navigationItem.title = classification
+                        }
+                        
+                    }
+                    
+                    
+                    
+                }
+                
+ */
+                
+                
+                if let classification = classifiedImage.classifiers.first?.classes.first?.classification{
+                    DispatchQueue.main.async {
+                        self.navigationItem.title = classification
+                    }
+                    
+                }
+                
+                
+                
+            }
+            else{
+                
+                DispatchQueue.main.async{
+                    self.navigationItem.title = "Could not be determined"
+                }
+            }
+        }
+        
+        
+        
+        
+
+    
+}
+    
+    @IBAction func sendPicGeneral(_ sender: Any) {
+        
+        let apiKey = "bf4a56b0b163ef8cae452ae70c6552a1ced4c645"
+        let version = "2017-06-09"
+        
+        
+        var owners: [String] = ["bf4a56b0b163ef8cae452ae70c6552a1ced4c645", "IBM"]
+        var classifierID: [String] = ["Colgate_1194136755", ""]
+        var language = "en"
+        
+        
+        
+        
+        let url = URL(string: "https://04fdef7e.ngrok.io/image.jpeg")
+        
+        
+        
+        let visualRecognition = VisualRecognition(apiKey: apiKey, version: version)
+        
+        
+        
+        
+        
+        
+        let failure = {(error:Error) in
+            
+            DispatchQueue.main.async {
+                self.navigationItem.title = "Image could not load"
+                
+            }
+            print(error)
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        visualRecognition.classify(image: (url?.absoluteString)!, failure: failure){
             
             classifiedImages in
             
@@ -171,11 +276,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 }
             }
         }
-        
-        
-
+    }
     
-}
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
