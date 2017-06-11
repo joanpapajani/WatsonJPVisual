@@ -42,7 +42,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
 
     
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]!) {
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
             NSLog("Received image from camera")
             let mediaType = info[UIImagePickerControllerMediaType] as! String
             var originalImage:UIImage?, editedImage:UIImage?, imageToSave:UIImage?
@@ -71,7 +71,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                     for (key, value) in parameters {
                         multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
                     }
-                }, to:"https://56c7de6c.ngrok.io/getimage.php")
+                }, to:"https://04fdef7e.ngrok.io/getimage.php")
                 { (result) in
                     switch result {
                     case .success(let upload, _, _):
@@ -108,15 +108,26 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBAction func sendPic(_ sender: Any) {
         
         let apiKey = "bf4a56b0b163ef8cae452ae70c6552a1ced4c645"
-        let version = "2017-05-30"
+        let version = "2017-06-09"
+        
+        
+        var owners: [String] = ["bf4a56b0b163ef8cae452ae70c6552a1ced4c645", "IBM"]
+        var classifierID: [String] = ["Colgate_1194136755", ""]
+        var language = "en"
         
         
         
-        let url = URL(string: "https://56c7de6c.ngrok.io/image.jpeg")
+        
+        let url = URL(string: "https://04fdef7e.ngrok.io/image.jpeg")
         
        
         
         let visualRecognition = VisualRecognition(apiKey: apiKey, version: version)
+        
+        
+        
+        
+        
         
         let failure = {(error:Error) in
             
@@ -130,7 +141,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         
         
-        visualRecognition.classify(image: (url?.absoluteString)!, failure: failure){
+        
+        
+        
+        
+        
+        visualRecognition.classify(image: (url?.absoluteString)!, owners: owners, classifierIDs: classifierID, threshold: 0.0, language: language, failure: failure){
             
             classifiedImages in
             
@@ -144,6 +160,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                     }
                     
                 }
+                
+                
                 
             }
             else{
