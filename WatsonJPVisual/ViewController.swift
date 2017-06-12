@@ -19,6 +19,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var promoResult: UITextView!
+    
+    
+    var promoMessage:String?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,7 +117,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         
         var owners: [String] = ["bf4a56b0b163ef8cae452ae70c6552a1ced4c645", "IBM"]
-        var classifierID: [String] = ["Colgate_1563253915", ""]
+        var classifierID: [String] = ["Colgate_1035807277", ""]
         var language = "en"
         
         
@@ -182,12 +187,44 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                     
                 }
                 
- */
+                 */
+                
                 
                 
                 if let classification = classifiedImage.classifiers.first?.classes.first?.classification{
                     DispatchQueue.main.async {
                         self.navigationItem.title = classification
+                        
+                        
+                        if(classifiedImage.classifiers.first?.classes.first?.classification == "Colgate Wisp"){
+                            
+                            self.promoMessage = "Promotion on Colgate Wisp: 10% off per single unit"
+                            
+                        }
+                        
+                        else if(classifiedImage.classifiers.first?.classes.first?.classification == "Irish Spring Body Wash"){
+                         
+                            self.promoMessage = "Promotion on Irish Spring: 5% off per single unit"
+                            
+                        }
+                        
+                        else if(classifiedImage.classifiers.first?.classes.first?.classification == "Softsoap Hand Wash"){
+                            
+                            self.promoMessage = "Promotion on Softsoap: 20% off per single unit for orders of 10 or more"
+                            
+                        }
+                        
+                        else{
+                            
+                            self.promoMessage = "Sorry, product not found"
+                            
+                        }
+                        
+                        
+                        self.promoResult.text = self.promoMessage
+                        
+                        
+                        
                     }
                     
                 }
@@ -209,6 +246,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
     
 }
+    
+    
+    
     
     @IBAction func sendPicGeneral(_ sender: Any) {
         
