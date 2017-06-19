@@ -15,6 +15,7 @@
 		584126041EDB96DB00823280 /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584126021EDB96DB00823280 /* RestKit.framework */; };
 		584126051EDB96DB00823280 /* RestKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 584126021EDB96DB00823280 /* RestKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		588F99F01EDE2D61004C4AEA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 584125FC1EDB961D00823280 /* Info.plist */; };
+		58BD8A6F1EF0361C00CADE2E /* SelectionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BD8A6E1EF0361C00CADE2E /* SelectionPicker.swift */; };
 		58D5A7F51EE89AAC00C5BE7D /* VisualRecognitionV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D5A7F41EE89AAC00C5BE7D /* VisualRecognitionV3.framework */; };
 		58D5A7F61EE89AAC00C5BE7D /* VisualRecognitionV3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 58D5A7F41EE89AAC00C5BE7D /* VisualRecognitionV3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		58D5A7F81EE89B6000C5BE7D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5841261F1EDB9E2900823280 /* Alamofire.framework */; };
@@ -58,6 +59,7 @@
 		584126231EDBA4D000823280 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = ../getimage/Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		584126261EDBA55D00823280 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		584126271EDBA55D00823280 /* AlamofireImage.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = AlamofireImage.framework.dSYM; path = Carthage/Build/iOS/AlamofireImage.framework.dSYM; sourceTree = "<group>"; };
+		58BD8A6E1EF0361C00CADE2E /* SelectionPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionPicker.swift; sourceTree = "<group>"; };
 		58D5A7F31EE895BC00C5BE7D /* VisualRecognitionV3.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = VisualRecognitionV3.framework.dSYM; path = Carthage/Build/iOS/VisualRecognitionV3.framework.dSYM; sourceTree = "<group>"; };
 		58D5A7F41EE89AAC00C5BE7D /* VisualRecognitionV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisualRecognitionV3.framework; path = Carthage/Build/iOS/VisualRecognitionV3.framework; sourceTree = "<group>"; };
 		58D5A7F71EE89ABA00C5BE7D /* Alamofire.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Alamofire.framework.dSYM; path = Carthage/Build/iOS/Alamofire.framework.dSYM; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				584125F01EDB961D00823280 /* AppDelegate.swift */,
 				584125F21EDB961D00823280 /* ViewController.swift */,
+				58BD8A6E1EF0361C00CADE2E /* SelectionPicker.swift */,
 				584125F41EDB961D00823280 /* Main.storyboard */,
 				584125F71EDB961D00823280 /* Assets.xcassets */,
 				584125F91EDB961D00823280 /* LaunchScreen.storyboard */,
@@ -211,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				584125F31EDB961D00823280 /* ViewController.swift in Sources */,
+				58BD8A6F1EF0361C00CADE2E /* SelectionPicker.swift in Sources */,
 				584125F11EDB961D00823280 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

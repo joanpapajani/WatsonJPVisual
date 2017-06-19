@@ -22,14 +22,30 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var promoResult: UITextView!
     
     
-    var promoMessage:String?
+    
+    var companyName:String!
+    var locationName:String!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        print(companyName)
+        print(locationName)
+        
+        
     }
 
+    var promoMessage:String?
+    
+    let viewControllerB = SelectionPicker()
+    
+    
+ 
+    
     @IBAction func getImage(_ sender: Any) {
         
         if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)){
@@ -66,17 +82,18 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 imageView.reloadInputViews()
                 
         
+                
                 let parameters = [
-                    "username": "johnpapajani",
-                    "password": "colpal"
+                    "company": companyName,
+                    "location": locationName
                 ]
                 
                 Alamofire.upload(multipartFormData: { (multipartFormData) in
                     multipartFormData.append(UIImageJPEGRepresentation(self.imageView.image!, 0.5)!, withName: "photo_path", fileName: "image.jpeg", mimeType: "image/jpeg")
                     for (key, value) in parameters {
-                        multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+                        multipartFormData.append((value?.data(using: String.Encoding.utf8)!)!, withName: key)
                     }
-                }, to:"https://04fdef7e.ngrok.io/getimage.php")
+                }, to:"https://29354b98.ngrok.io/getimage.php")
                 { (result) in
                     switch result {
                     case .success(let upload, _, _):
@@ -117,13 +134,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         
         var owners: [String] = ["bf4a56b0b163ef8cae452ae70c6552a1ced4c645", "IBM"]
-        var classifierID: [String] = ["Colgate_1035807277", ""]
+        var classifierID: [String] = ["Colgate_1331719076", ""]
         var language = "en"
         
         
         
         
-        let url = URL(string: "https://04fdef7e.ngrok.io/image.jpeg")
+        let url = URL(string: "https://29354b98.ngrok.io/image.jpeg")
         
        
         
@@ -202,6 +219,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                             
                         }
                         
+                    
                         else if(classifiedImage.classifiers.first?.classes.first?.classification == "Irish Spring Body Wash"){
                          
                             self.promoMessage = "Promotion on Irish Spring: 5% off per single unit"
