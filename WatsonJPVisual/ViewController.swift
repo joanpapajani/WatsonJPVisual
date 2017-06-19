@@ -32,9 +32,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         super.viewDidLoad()
         
         
-        
-        print(companyName)
-        print(locationName)
+        // For testing segue variables from previous controller
+        //print(companyName)
+        //print(locationName)
         
         
     }
@@ -215,20 +215,20 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                         
                         if(classifiedImage.classifiers.first?.classes.first?.classification == "Colgate Wisp"){
                             
-                            self.promoMessage = "Promotion on Colgate Wisp: 10% off per single unit"
+                            self.promoMessage = "Promotion on Colgate Wisp " + " for " + self.companyName + " in " + self.locationName + " is  10% off per single unit"
                             
                         }
                         
                     
                         else if(classifiedImage.classifiers.first?.classes.first?.classification == "Irish Spring Body Wash"){
                          
-                            self.promoMessage = "Promotion on Irish Spring: 5% off per single unit"
+                            self.promoMessage = "Promotion on Irish Spring " + " for " + self.companyName + " in " + self.locationName + " is 5% off per single unit"
                             
                         }
                         
                         else if(classifiedImage.classifiers.first?.classes.first?.classification == "Softsoap Hand Wash"){
                             
-                            self.promoMessage = "Promotion on Softsoap: 20% off per single unit for orders of 10 or more"
+                            self.promoMessage = "Promotion on Softsoap " + " for " + self.companyName + " in " + self.locationName + " is 20% off per single unit for orders of 10 or more"
                             
                         }
                         
