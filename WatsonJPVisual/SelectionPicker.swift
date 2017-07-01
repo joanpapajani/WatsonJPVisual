@@ -12,6 +12,9 @@ import Alamofire
 import MobileCoreServices
 import CoreData
 import PhotosUI
+import AVKit
+
+
 
 
 
@@ -23,7 +26,7 @@ class SelectionPicker: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
    
   
     
-    var brandList = [["Walmart", "Costco", "Lidl", "Amazon"],["San Diego", "Teterboro", "Dublin", "Hong-Kong"]]
+    var brandList = [["Walmart", "Costco", "Lidl", "Amazon", "Whole Foods", "Petco"],["Piscataway", "Edison", "North Brunswick", "San Diego", "Ohio", "Boston", "Los Angeles", "Brooklyn"]]
     
     
     

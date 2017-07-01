@@ -15,13 +15,20 @@ import PhotosUI
 
 
 
-class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+
+
+class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, AVCaptureMetadataOutputObjectsDelegate {
+    
+    var captureSession: AVCaptureSession!
+    var previewLayer: AVCaptureVideoPreviewLayer!
 
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var promoResult: UITextView!
     
+    @IBOutlet weak var compName: UILabel!
     
+    @IBOutlet weak var locName: UILabel!
     
     var companyName:String!
     var locationName:String!
@@ -31,17 +38,196 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     override func viewDidLoad() {
         super.viewDidLoad()
         
+// For testing segue variables from previous controller
+        print(companyName)
+        print(locationName)
         
-        // For testing segue variables from previous controller
-        //print(companyName)
-        //print(locationName)
+        self.compName.text = "Company: "+companyName
+        
+        self.locName.text = "Location: "+locationName
         
         
     }
+    
+
 
     var promoMessage:String?
     
     let viewControllerB = SelectionPicker()
+    
+    
+    @IBAction func getCode(_ sender: Any) {
+  
+        
+        
+        self.navigationController?.isNavigationBarHidden = true
+        captureSession = AVCaptureSession()
+        
+        let videoCaptureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        let videoInput: AVCaptureDeviceInput
+        
+        do {
+            videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
+        } catch {
+            return
+        }
+        
+        if (captureSession.canAddInput(videoInput)) {
+            captureSession.addInput(videoInput)
+        } else {
+            failed();
+            return;
+        }
+        
+        let metadataOutput = AVCaptureMetadataOutput()
+        
+        if (captureSession.canAddOutput(metadataOutput)) {
+            captureSession.addOutput(metadataOutput)
+            
+            metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+            metadataOutput.metadataObjectTypes = [AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypePDF417Code]
+        } else {
+            failed()
+            return
+        }
+        
+        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession);
+        previewLayer.frame = view.layer.bounds;
+        previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+        view.layer.addSublayer(previewLayer);
+        
+        captureSession.startRunning();
+        
+        
+    }
+    
+    
+    
+
+    
+    func failed() {
+        let ac = UIAlertController(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+        captureSession = nil
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if (captureSession?.isRunning == false) {
+            captureSession.startRunning();
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if (captureSession?.isRunning == true) {
+            captureSession.stopRunning();
+        }
+    }
+    
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+        captureSession.stopRunning()
+        
+        if let metadataObject = metadataObjects.first {
+            let readableObject = metadataObject as! AVMetadataMachineReadableCodeObject;
+            
+            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+            found(code: readableObject.stringValue);
+        }
+        
+        dismiss(animated: true)
+    }
+    
+    func found(code: String) {
+        print(code)
+        
+        
+        
+        var _url = "http://58c7e931.ngrok.io/getpromo.php"
+        let parameters: Parameters = [
+            "barcode": code,
+            "company": companyName,
+            "location": locationName
+            
+        ]
+        
+        
+        
+        
+        Alamofire.request(_url,parameters:parameters).validate().responseJSON { response in
+            switch response.result {
+            case .success(let data):
+                let json1 = response.result.value
+                print(json1)
+                var jsonResponse1 : NSDictionary = NSDictionary()
+                jsonResponse1 = json1 as! NSDictionary
+                var label = jsonResponse1["Product Description"] as! String
+                var discount = jsonResponse1["Discount"] as! String
+                var SKUnum = jsonResponse1["SKU"] as! String
+                
+                
+                if (SKUnum == "no"){
+                    
+                    self.promoResult.text = "Sorry we dont have this product in our database."
+                    
+                }
+                else if (discount == "no"){
+                    
+                    var discount3 = "Sorry, there is no discount for this product in this location"
+                    
+                    self.promoResult.text = "SKU number: "+SKUnum+"\n\nProduct description: "+label+"\n\nDiscount for this location: " + discount3
+                    
+                }
+                
+                else{
+                    
+                
+                var discount2 = (Double(discount)! * 100)
+                var discount3 = String(Int(discount2))
+                
+                self.promoResult.text = "SKU number: "+SKUnum+"\n\nProduct description: "+label+"\n\nDiscount for this location: " + discount3+"%"
+                
+                }
+                
+                
+                
+                
+                
+                print(label)
+                //print(discount3)
+                
+                
+            case . failure(let error):
+                print("Request failed with error: \(error)")
+            }
+            
+        }
+        
+        
+        self.navigationItem.title = "Barcode: "+code
+        self.captureSession.stopRunning()
+        self.previewLayer.removeFromSuperlayer()
+        self.previewLayer = nil;
+        self.captureSession = nil;
+        self.navigationController?.isNavigationBarHidden = false
+        
+      
+        
+        
+        
+    }
+    
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
     
     
  
@@ -93,7 +279,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                     for (key, value) in parameters {
                         multipartFormData.append((value?.data(using: String.Encoding.utf8)!)!, withName: key)
                     }
-                }, to:"https://29354b98.ngrok.io/getimage.php")
+                }, to:"http://58c7e931.ngrok.io/getimage.php")
                 { (result) in
                     switch result {
                     case .success(let upload, _, _):
@@ -104,14 +290,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                         
                         upload.responseJSON { response in
                             
-                            print(response.request)
-                            print(response.response)
-                            print(response.data)
-                            print(response.result)
+                            //print(response.request)
+                            //print(response.response)
+                            //print(response.data)
+                            //print(response.result)
                             
                             
                             if let JSON = response.result.value {
                                 print("JSON: \(JSON)")
+                                var jsonResponse : NSDictionary = NSDictionary()
+                                jsonResponse = JSON as! NSDictionary
+                                var status1 = jsonResponse["Discount"] as! String
+                                print(status1)
+                                
                             }
                         }
                         
@@ -140,7 +331,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         
         
-        let url = URL(string: "https://29354b98.ngrok.io/image.jpeg")
+        let url = URL(string: "http://58c7e931.ngrok.io/image.jpeg")
         
        
         

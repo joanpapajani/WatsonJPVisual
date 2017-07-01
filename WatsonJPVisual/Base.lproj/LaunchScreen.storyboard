@@ -25,13 +25,9 @@
                                 <rect key="frame" x="40" y="242" width="97" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wea-qa.png" translatesAutoresizingMaskIntoConstraints="NO" id="iMi-xA-kmi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ibm-watson.png" translatesAutoresizingMaskIntoConstraints="NO" id="iMi-xA-kmi">
                                 <rect key="frame" x="220" y="242" width="111" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="658544-200 copy.png" translatesAutoresizingMaskIntoConstraints="NO" id="JFK-b1-E2t">
-                                <rect key="frame" x="152" y="208" width="70" height="167"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -43,8 +39,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="658544-200 copy.png" width="200" height="200"/>
         <image name="AAEAAQAAAAAAAAXLAAAAJDc0Y2EyZjc5LTY1MTgtNGVkNC05YTU5LWRiODZhZTYzZjQyOQ.png" width="200" height="200"/>
-        <image name="wea-qa.png" width="220" height="218"/>
+        <image name="ibm-watson.png" width="220" height="218"/>
     </resources>
 </document>
